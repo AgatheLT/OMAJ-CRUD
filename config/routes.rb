@@ -5,3 +5,4 @@ Rails.application.routes.draw do
   resources :products, only: [ :show, :edit, :update, :destroy ]
   root 'categories#index'
 end
+
