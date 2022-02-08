@@ -1,21 +1,40 @@
 <div class="top-page text-center p-5">
-  <h1><strong>Nos pépite de la catégorie "<%= @category.name %>"</h1>
+  <h1>Nos pépites de la catégorie "<%= @category.name %>"</h1>
+  <%= link_to 'Changer le nom de la catégorie', edit_category_path(@category), class: "edit_btn text-right"%>
 </div>
 
-<ul class="list-group">
-  <% @category.products.each do |product| %>
-    <li class="list-group-item"> 
-    Nom du produit : <%= product.name %>
-    Description : <%= product.description %>
-    <%= link_to "Supprimer",
-                  product_path(product),
-                  method: :delete,
-                  data: { confirm: "Êtes-vous certain.e de vousloir supprimer cette beauté ?" } %>
-  <% end %>
-</ul>
 
-<br><br>
-<%= link_to 'Edit', edit_category_path(@category) %>
-<%= link_to 'Back', categories_path %>
-<%= link_to 'Ajouter un produit', new_category_product_path(@category) %>
+<div class="container">
+  <div class="row">
+    <% if @category.products == [] %>
+      <h4 class="text-center mt-3">Vous n'avez encore aucun produit pour cette catégorie</h4>
+      <%= link_to 'Ajouter un produit', new_category_product_path(@category), class: "btn form-btn" %>
+    <% else %>
+      <% @category.products.each do |product| %>
+        <div class="text-center m-4 p-4">
+          <%= link_to 'Ajouter un autre produit', new_category_product_path(@category), class: "btn form-btn" %>
+        </div>
+        <div class="col-4 p-2">
+          <div class="card category_card p-2">
+            <h3><%= product.name %></h3>
+            <p><%= product.description %></p>
+            <p>Couleur : <%= product.color %></p>
+            <p>Marque : <%= product.brand %></p>
+            <p>Prix : <%= product.price %> €</p>
+            <%= link_to "Supprimer",
+                      product_path(product),
+                      method: :delete,
+                      data: { confirm: "Êtes-vous certain.e de vousloir supprimer cette beauté ?" } %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container m-5">
+  <%= link_to '< Retourner à la liste des catégories', categories_path, class: "back_btn " %>
+</div>
+
+
 
