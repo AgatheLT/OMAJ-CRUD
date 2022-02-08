@@ -5,5 +5,16 @@
   <%= @category.name %>
 </p>
 
+<ul class="list-group">
+  <% @category.products.each do |product| %>
+    <li class="list-group-item"> 
+    Nom du produit : <%= product.name %>
+    Description : <%= product.description %>
+    </li>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
+<%= link_to 'Ajouter un produit', new_category_product_path(@category) %>
+
