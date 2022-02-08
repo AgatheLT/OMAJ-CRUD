@@ -1,24 +1,20 @@
-# README
+# CRUD-OMAJ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dans ce mini-MVP, on y trouve des catégories et des produits.
+Les produits appartiennent aux catégories. 
 
-Things you may want to cover:
+Il est possible de :
+> Pour les catégories : 
+ - en ajouter une
+ - modifier son nom
+> Pour les produits : 
+  - d'en ajouter
+  - d'en supprimer
 
-* Ruby version
+Une fois le projet en local, il est nécessaire de faire les commandes suivantes dans le terminal :
+1/ bundle install
+2/ rails db:migrate
+3/ rails db:seed (cela permet de creer les 3 catégories)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Enfin, pour lancer l'application : "rails s"
+==> http://localhost:3000/
