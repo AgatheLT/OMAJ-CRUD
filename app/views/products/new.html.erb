@@ -1,5 +1,8 @@
 <%= simple_form_for [ @category, @product ] do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
+  <%= f.input :brand %>
+  <%= f.input :color %>
+  <%= f.input :price %>
   <%= f.submit "Ajouter un produit", class: "btn btn-primary" %>
 <% end %>

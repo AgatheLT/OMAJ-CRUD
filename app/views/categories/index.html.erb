@@ -1,22 +1,22 @@
-<div class="top-page p-5">
+<div class="top-page text-center p-5">
   <h1>NOS CATEGORIES</h1>
+  <br> <%= link_to 'Ajouter une nouvelle catégorie', new_category_path, class: 'btn omaj-btn' %>
 </div>
-<div class="container pt-4">
 
-
-  <div class="d-flex flex-row justify-content-evenly mb-3">
+<div class="container">
+  <div class="row">
     <% @categories.each do |category| %>
-      <div class="card p-2">
-        <td><%= category.name %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Modifier le nom', edit_category_path(category) %></td>
+    <div class="col-4 p-2">
+      <div class="card category_card text-center justify-content-center">
+        <%= link_to category do %>
+          <%= category.name %>
+        <% end %>
       </div>
+    </div>
     <% end %>
   </div>
-
 </div>
 
+<div class="bottom text-center">
+</div>
 
-<br>
-
-<%= link_to 'New Category', new_category_path %>
