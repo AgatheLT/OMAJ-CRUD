@@ -1,9 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+<div class="top-page">
+  <div class="show-banner">
+    <h1><strong>Name:</strong><%= @category.name %></h1>
+  </div>
+</div>
 
 <ul class="list-group">
   <% @category.products.each do |product| %>
@@ -18,7 +17,7 @@
   <% end %>
 </ul>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Edit', edit_category_path(@category) %>
 <%= link_to 'Back', categories_path %>
 <%= link_to 'Ajouter un produit', new_category_product_path(@category) %>
 

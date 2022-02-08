@@ -1,1 +1,26 @@
+// External Library
 @import "bootstrap/scss/bootstrap";
+
+// CSS partials
+@import "components/index";
+@import "config/fonts";
+@import "pages/index";
+
+
+
+h1, h2, h3, h4, h5 {
+  font-family: $titles;
+}
+
+p {
+font-family: $paragraphs;
+}
+
+a {
+  font-family: $links;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #FFCB98;
+}

@@ -1,26 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="top-page p-5">
+  <h1>NOS CATEGORIES</h1>
+</div>
+<div class="container pt-4">
 
-<h1>Categories</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div class="d-flex flex-row justify-content-evenly mb-3">
     <% @categories.each do |category| %>
-      <tr>
+      <div class="card p-2">
         <td><%= category.name %></td>
         <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= link_to 'Modifier le nom', edit_category_path(category) %></td>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+
+</div>
+
 
 <br>
 
