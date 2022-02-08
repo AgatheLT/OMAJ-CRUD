@@ -12,9 +12,12 @@ Il est possible de :
   - d'en supprimer
 
 Une fois le projet en local, il est nécessaire de faire les commandes suivantes dans le terminal :
-1/ bundle install
-2/ rails db:migrate
-3/ rails db:seed (cela permet de creer les 3 catégories)
+
+*1/ bundle install
+
+*2/ rails db:migrate
+
+*3/ rails db:seed (cela permet de creer les 3 catégories)
 
 Enfin, pour lancer l'application : "rails s"
 ==> http://localhost:3000/
